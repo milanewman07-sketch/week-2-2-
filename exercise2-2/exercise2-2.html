@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W2P2 - Exercise 2.2</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/libraries/p5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 2.2</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>Open <strong>exercise2-2/sketch.js</strong>, add the <code>setup()</code> and <code>draw()</code> functions, and create a 400 by 400 pixel canvas.</p>
+            <p>Create a 50 pixel wide square that moves with the mouse. You will notice that when the mouse moves out of bounds of the canvas, the square disappears. Use 
+                conditionals to keep the square fully visible on the canvas. When the mouse leaves the canvas, the square should stick to the nearest edge (see the video 
+                below). It is recommended that you tackle this problem one edge of the canvas at a time e.g. start by figuring out how to keep the square on the canvas if 
+                <code>mouseX</code> is too far to the left.
+            </p>
+            <p>Optional extension: When you have successfully completed this exercise using conditionals, you may like to try using p5.js's <a href="https://p5js.org/reference/p5/constrain" target="_blank"><code>constrain()</code></a> function. It makes the code much simpler!</p>
+            <p>When you are done, check your work using <a href="./check-exercise2-2.html">check-exercise2-2.html</a>.</p>
+            <p>Expected output:</p>
+            <p>
+                <video width="500" height="500" controls>
+                    <source src="./assets/exercise2-2.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                 </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>You only need to edit sketch.js.</p>
+                    <p>Start by drawing a square that moves with the mouse. It is recommended that you draw the square in CENTER mode. You should remember how to do this from the last practical. If not, revisit the sample solutions for the last practical.</p>
+                    <p>Next, try to keep just the x coordinate within bounds of the canvas. Here are the key considerations (assuming the square is drawn in CENTER mode):</p>
+                    <ul>
+                        <li>The square will start to disappear off the left edge when <code>mouseX</code> is less than half the width of the square. To keep the square in bounds on the left, set its x coordinate to the lowest "safe" value of x if <code>mouseX</code> would otherwise cause it to move off screen.</li>
+                        <li>The square will start to disappear off the right edge when <code>mouseX</code> is greater than the width of the canvas minus half the width of the square. To keep the square in bounds on the right, set its x coordinate to the highest "safe" value of x if <code>mouseX</code> would otherwise cause it to move off screen.</li>
+                    </ul>
+                    <p>Finally, you will need to write code to keep the square in bounds on the y axis. This should be very similar to the code you wrote for the x axis, you're just dealing with different variables.</p>
+                    <p>The following pages in the p5.js reference may help:</p>
+                    <ul>
+                        <li><a href="https://p5js.org/reference/p5/mouseX" target="_blank"><code>mouseX</code></a></li>
+                        <li><a href="https://p5js.org/reference/p5/mouseY" target="_blank"><code>mouseY</code></a></li>
+                        <li><a href="https://p5js.org/reference/p5/width" target="_blank"><code>width</code></a></li>
+                        <li><a href="https://p5js.org/reference/p5/height" target="_blank"><code>height</code></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>

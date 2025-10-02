@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W2P2 - Exericse 1.1</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/libraries/p5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 1.1</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>Open <strong>exercise1-1/sketch.js</strong>. It contains the code from the mousePressAppear example shown in lecture. Run the code 
+            to remind yourself of what it does. Try clicking your mouse to make the circle appear and disappear.</p>
+            <p>Your task is to edit the sketch to create the output shown in the video below. When the mouse is pressed, a new circle should appear 
+                on screen at a random location for every frame that the mouse is pressed. The circles should also 
+                stay on screen rather than disappear. Make the following changes:</p>
+            <ol>
+                <li>Change the arguments passed to <code>circle()</code> be randomly generated. The x coordinate should be a number between 0 and the 
+                width of the screen. The y coordinate should be between 0 and the height of the screen. The diameter of the circle should be between 10 and 
+                100 (inclusive).
+            </li>
+                <li>If you run the code now, you'll see that circles rapidly appear and disappear when the mouse is pressed. This is because <code>background()</code> is 
+                called every frame. Remember that the <code>background()</code> function doesn't work the way you might 
+                expect if you've used tools like Photoshop, which allow you to paint a layer <em>behind</em> existing shapes. Instead, <code>background()</code> fills the 
+                screen with colour, painting <em>over</em> any existing shapes. This causes the flashing effect, where a circle is drawn then immediately 
+                painted over on the next frame. To allow the circles to stay on screen, move the <code>background()</code> call into <code>setup()</code>, after the canvas is created.</li>
+                <li>Next, see if you can work out how to clear the canvas when a key is pressed. You will need to use the <code>keyIsPressed</code> system variable and 
+                an if statement. What goes inside the if statement? The clue is in the previous bullet point! The video below shows the screen being cleared at 7 seconds.</li>
+            </ol>
+            <p>When you are done, check your work using <a href="./check-exercise1-1.html">check-exercise1-1.html</a>.</p>
+            <p>Expected output:</p>
+            <p>
+                <video width="400" height="400" controls>
+                    <source src="./assets/exercise1-1.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                 </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>You only need to edit sketch.js.</p>
+                    <p>For step 1, replace the existing arguments passed to <code>circle()</code> with calls to the <code>random()</code> function. For the 
+                    x and y locations, you'll only need to pass <code>random()</code> one argument--the largest number that it can generate. For the circle width, 
+                    you'll need to pass <code>random()</code> two numbers: the first should be the smallest number it can generate and the second should indicate the largest 
+                    number it can generate.</p>
+                    <p>For step 2, delete the call to <code>background()</code> that is currently in <code>draw()</code> and put it at the end of <code>setup()</code> instead.</p>
+                    <p>For step 3, the syntax of the <code>if</code> statement should be very similar to the <code>if</code> statement that is already in the sketch but you will 
+                    need to use the <code>keyIsPressed</code> system variable instead of <code>mouseIsPressed</code>. To clear the screen, when a key is pressed, call <code>background()</code> inside 
+                    the <code>if</code> block. This will paint over all the circles that have been drawn.</p>
+                    <p>Some useful links in the p5.js documentation:</p>
+                    <ul>
+                        <li><a href="https://p5js.org/reference/p5/random" target="_blank"><code>random()</code></a></li>
+                        <li><a href="https://p5js.org/reference/p5/keyIsPressed" target="_blank"><code>keyIsPressed</code></a></li>
+                        <li><a href="https://p5js.org/reference/p5/background" target="_blank"><code>background()</code></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>

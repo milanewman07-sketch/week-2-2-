@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W2P2 - Exercise 1.2</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/libraries/p5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 1.2</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>Open <strong>exercise1-2/sketch.js</strong>. It contains the code from the slidingCircleV3 example shown in lecture. Run the code 
+            to remind yourself of what it does.</p>
+            <p>Your task is to make one tiny edit to the code so that the circle slides back and forth at a random speed between 1 and 10.</p>
+            <p>To achieve the expected output, you will need to do the following:</p>
+            <ul>
+                <li>Identify the variable that determines the speed of the circle.</li>
+                <li>Change the initial value of that variable from a hardcoded number to the result of a call to <code>random()</code>.</li>
+                <li>Initialise the variable in the appropriate part of the code (see the randomColours example from last lecture for a clue).</li>
+            </ul>
+            <p>When you are done, check your work using <a href="./check-exercise1-2.html">check-exercise1-2.html</a>.</p>
+            <p>Expected output:</p>
+            <p>
+                <video width="600" height="600" controls>
+                    <source src="./assets/exercise1-2.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                 </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>You only need to edit sketch.js.</p>
+                    <p>If you have edited the variable to use <code>random()</code> but the circle is not moving, it is likely that 
+                    you have called <code>random()</code> in the wrong place. Although you can initialise a variable with a hardcoded value 
+                    outside of <code>setup()</code> and <code>draw()</code>, you can only call p5.js functions from inside <code>setup()</code> or <code>draw()</code>. You 
+                    will need to declare the variable above <code>setup()</code>, then initialise it by calling <code>random()</code> in <code>setup()</code>. The 
+                    randomColours example from last lecture includes some very similar code.</p>
+                    <p>Make sure you are calling <code>random()</code> with two arguments--the minimum and maximum possible values.</p>
+                    <p>Some useful links in the p5.js documentation:</p>
+                    <ul>
+                        <li><a href="https://p5js.org/reference/p5/random" target="_blank"><code>random()</code></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>

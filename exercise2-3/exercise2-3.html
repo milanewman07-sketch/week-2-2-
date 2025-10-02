@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM1 - W2P2 - Exercise 2.3</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="../lib/libraries/p5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Exercise 2.3</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>Open <strong>exercise2-3/sketch.js</strong>, add the <code>setup()</code> and <code>draw()</code> functions, and create a 600 by 400 pixel canvas.</p>
+            <p>Your task is to convert the sliding circle you should be very familiar with into a bouncing ball. Draw a circle with a diameter of 100px in the 
+                top left corner of the canvas. You will need variables to track the x and y locations and the speed and direction of the ball on the x and y axes. This is very 
+                similar to the variables used in the sliding circle examples but now you will need to have a second set of variables to handle the ball's 
+                movement on the y axis. The ball should move at a speed of 3 pixels per frame on both axes.
+            </p>
+            <p>The solution to this exercise has a lot in common with both the sliding circle and the previous exercise in this practical.</p>
+            <p>When you are done, check your work using <a href="./check-exercise2-3.html">check-exercise2-3.html</a>.</p>
+            <p>Expected output:</p>
+            <p>
+                <video width="600" height="400" controls>
+                    <source src="./assets/exercise2-3.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                 </video>
+            </p>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>You only need to edit sketch.js.</p>
+                    <p>If you are not sure where to start, copy paste the code from one of the slidingCircle examples into the sketch.js 
+                        for this exercise. Pick the version that makes most sense to you. Adjust the canvas size and speed of the circle 
+                        on the x axis to match the requirements for this exercise. 
+                    </p>
+                    <p>Next, add variables to manage the circle's speed and direction on the y axis. These should be very similar to the existing 
+                        variables. At this point, you should have a circle that moves diagonally across the screen then disappears.
+                    </p>
+                    <p>The code should have a conditional statement that changes the circle's direction on the x axis when it reaches an edge. Add 
+                        another conditional that will do the same for the circle's direction on the y axis.
+                    </p>
+                    <p>Finally, make sure your conditionals are written in a way that keeps the circle fully visible on screen, much like you did for 
+                        the square in the previous exercise. It is also important that the circle starts from the top left corner, where it should be 
+                        fully visible on the canvas.
+                    </p>
+                    <ul>
+                        <li><a href="https://p5js.org/reference/p5/width" target="_blank"><code>width</code></a></li>
+                        <li><a href="https://p5js.org/reference/p5/height" target="_blank"><code>height</code></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>
