@@ -3,6 +3,7 @@ let moveAmount = 1;
 
 function setup() {
     createCanvas(600, 600);
+    moveAmount = random(1, 10)
 }
 
 function draw() {
